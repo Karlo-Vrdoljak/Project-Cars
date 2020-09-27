@@ -1,6 +1,8 @@
+@import "../../base.scss";
 .Navbar {
   width: 100vw;
   .bgBlack {
-    background-color: black;
+    height: 64px;
+    background-color: $black;
   }
 }

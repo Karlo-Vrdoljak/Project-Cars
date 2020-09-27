@@ -4,6 +4,7 @@ import Home from '../Home/Home';
 import classes from './AppRouter.module.scss';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import Items from './Items/Items';
+import MyProjects from '../MyProjects/MyProjects';
 
 class AppRouter extends React.Component {
   render() {
@@ -25,8 +26,8 @@ class AppRouter extends React.Component {
           {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/about">
-              <About />
+            <Route path="/MyProjects">
+              <MyProjects />
             </Route>
             <Route path="/users">
               <Users />
