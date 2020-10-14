@@ -1,23 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Navigation from './navigation/navigation';
 
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
+import 'react-native-gesture-handler';
+
 
 export default function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </SafeAreaProvider>
-    );
-  }
+  useEffect(() => {
+    // NavigationBar.setColor('#ffab8e');
+  });
+  return (
+    <View style={styles.container}>
+      <Navigation/>
+      <StatusBar style="light" backgroundColor={"#222"} />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    height: '100%',
+    width: '100%',
+    flex: 1,
+    resizeMode: "center"
+  },
+});
